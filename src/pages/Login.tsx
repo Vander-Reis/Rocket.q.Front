@@ -1,9 +1,9 @@
-import { Header } from "./components/Header";
-import ImageHome from './assets/ImageHome.png';
-import { Input } from './components/Input';
-import { Button } from "./components/Button";
-import logIn from './assets/log-in.png';
-import users from './assets/users.png';
+import { Header } from "../components/Header";
+import ImageHome from '../assets/ImageHome.png';
+import { Input } from '../components/Input';
+import { Button } from "../components/Button";
+import logIn from '../assets/log-in.png';
+import users from '../assets/users.png';
 import { useNavigate } from "react-router-dom";
 
 export function Login() {
@@ -23,7 +23,9 @@ export function Login() {
         <form>
           <h3 className="text-3xl font-bold leading-10 mb-6" >Entre como participante</h3>
           <Input title="Código da sala"/>
-          <Button icon={logIn} background="Secondary" title="Entrar na sala"/>
+          <div className="mt-4">
+            <Button icon={logIn} background="Secondary" title="Entrar na sala"/>
+          </div>
 
           <div className="flex gap-3 items-center justify-center mt-10">
             <div className="border-1 border-gray-400 w-40"></div>
