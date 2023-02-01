@@ -16,8 +16,8 @@ export function Login() {
   return (
     <div>
       <Header/>
-      <div className="md:flex items-center gap-40 mt-9 ">
-        <div className="hidden md:flex">
+      <div className="flex items-center gap-40 mt-9 ">
+        <div className="flex">
           <img src={ImageHome} className="max-w-lg"/>
         </div>  
         <form>
