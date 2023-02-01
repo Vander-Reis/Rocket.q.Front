@@ -10,7 +10,7 @@ interface QuestionCardProps {
 
 export function QuestionCard({ description, read = false }: QuestionCardProps) {
   return (
-    <div className={clsx("w-full h-32 bg-Light_blue rounded-r-lg rounded-bl-lg p-6", {
+    <div className={clsx("w-full h-32 bg-Light_blue rounded-r-lg rounded-bl-lg p-6 mt-2 mb-2", {
       "bg-grey bg-opacity-10": read === true,
     })}>
       <div className='flex items-center gap-4'>
