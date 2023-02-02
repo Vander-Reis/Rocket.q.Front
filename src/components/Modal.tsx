@@ -2,8 +2,13 @@ import * as Dialog from '@radix-ui/react-dialog';
 import trash from '../assets/trash.png';
 import { Input } from './Input';
 import { Button } from './Button';
+import {InputHTMLAttributes} from 'react'
 
-export function Modal() {
+interface ModalProps extends InputHTMLAttributes<HTMLInputElement> {
+  deleteQuestion: () => void;
+}
+
+export function Modal({deleteQuestion, ...rest}: ModalProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger className='flex items-center gap-2'>
@@ -20,19 +25,17 @@ export function Modal() {
             Tem certeza que você deseja excluir esta pergunta?
           </Dialog.Description>
 
-          <form>
             <div className='w-80 m-auto mt-6'>
-              <Input title='Digite sua senha' />
+              <input {...rest} type="password" placeholder="Insira uma senha" className="w-full h-12 rounded-lg p-4 border-2 border-gray-400 outline-none text-base text-black_blue focus:border-blue-600" />
             </div>
             <div className='flex mt-10 justify-center gap-2 '>
               <Dialog.Close className='w-36'>
                 <Button background='Fourth' title="Cancelar" />
               </Dialog.Close>
               <div className='w-36'>
-                <Button background='Tertiary' title='Sim, excluir' />
+              <button className="w-full p-4 min-w-max h-12 rounded-lg flex items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white outline-none" onClick={deleteQuestion} > Sim, excluir</button>
               </div>
             </div>
-          </form>
 
         </Dialog.Content>
       </Dialog.Portal>
